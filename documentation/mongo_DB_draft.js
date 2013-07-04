@@ -25,6 +25,11 @@
 {  
   "name": "Module",
   "description": "To further emulate the concept of classes in such a way that we're able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope.",
+    "creation": {
+    "creator": "Richard Comford",
+    "year": "2003",
+    "popularized_by": "Douglas Crockford"
+  },
   "category": "Structural",
   "context": "Our Javascript code is messy with functions and variables mixed up together and we have the need to abstract code parts into modules.",
     "problem_solved": [
@@ -38,7 +43,7 @@
       }
     ],
   "solution": "Encapsulate functions and variables in its own “namespaces” (modules).",
-  "design": <"https://raw.github.com/yesobo/design_patterns_snippets/master/module_design.js",
+  "design": "https://raw.github.com/yesobo/design_patterns_snippets/master/module/module_design.js",
   "implementation_guide": [
     {
       "step_number": "1",
@@ -56,7 +61,12 @@
   "co_requisites": "",
   "relations": [
     {
-      "name": "Singleton"
+      "name": "Singleton",
+      "description": "Module pattern is based on Singleton"
+    },
+    {
+      "name": "Revealing Module",
+      "description": "Improved version of module pattern"
     }
   ],
   "known_usage": [
@@ -76,25 +86,41 @@
 
 {  
   "name": "Revealing Module",
-  "description": "To further emulate the concept of classes in such a way that we're able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope.",
+  "description": "Improved version of module pattern",
+  "creation": {
+    "creator": "Christian Heilmann",
+  },
   "category": "Structural",
-  "context": "",
-  "problem_solved": "",
-  "solution": "",
-  "design": "",
+  "context": "In the module patter we have to repeat the name of the main object when we wanted to call one public method from another to access public variables. And we have to switch to object literal notation for the things we wish to make public.",
+  "problem_solved": [
+    {
+      "code": "https://raw.github.com/yesobo/design_patterns_snippets/master/revealing_module/problem_solved.js"
+    }
+  ],
+  "solution": "Define all the module functions and variables in the private scope and return an anonymous object with pointers to the private functionality we wished to reveal as public.",
+  "design": "https://raw.github.com/yesobo/design_patterns_snippets/master/revealing_module/rev_module_design.js",
   "implementation_guide": "",
   "illustration": "",
   "code_examples": "",
   "co_requisites":"",
-  "relations": "",
+  "relations": [
+    {
+      "name": "module",
+      "description": "improved version of module pattern"
+    }
+  ],
   "known_usage": "",
   "fitness_of_purpose": "",
-  "usefulness": "",
+  "usefulness": "A more strucutred an easier to understand than module pattern",
   "applicability": "",
   "system": "",
   "configuration": "",
   "antipattern": "",
-  "class_or_object": "class"
+  "class_or_object": "object",
+  "disadvantages": {
+    "code": "https://raw.github.com/yesobo/design_patterns_snippets/master/revealing_module/problem_solved.js",
+    "description": "if a private function refers to a public function, that public function can't be overriden if a patch is necessary"
+  }
 }
 
 {  

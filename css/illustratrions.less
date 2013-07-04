@@ -1,0 +1,34 @@
+// variables
+@moduleHeight: 5em;
+@functionHeight: 2em;
+@functionWidth: 7em;
+
+.module {
+  border: solid 1px black;
+  background: #f3f783;
+  width: 10em;
+  height: @moduleHeight;
+  border-radius: 1em;
+  text-align: center;
+  line-height: @moduleHeight;
+  margin-top: @functionHeight / 2;
+  margin-left: @functionWidth / 2
+}
+
+.className {
+   vertical-align:middle; 
+    display:inline-block; 
+}
+
+.publicFunction {
+  background: #83e7f7;
+  font-size: 0.8em;
+  border: solid 1px black;
+  width: @functionWidth;
+  height: @functionHeight;
+  line-height: @functionHeight;
+  border-radius: 0.5em;
+  position: relative;
+  top: -@functionWidth;
+  left: -@functionWidth
+}
